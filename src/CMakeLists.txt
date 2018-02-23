@@ -1,0 +1,16 @@
+ADD_EXECUTABLE( ORBextract ORBextract.cpp )
+TARGET_LINK_LIBRARIES( ORBextract
+    ORBextractor
+    ${OpenCV_LIBS} )
+
+# 增加opencv的依赖
+FIND_PACKAGE( OpenCV REQUIRED )
+
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
+LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib)
+
+
+ADD_LIBRARY( ORBextractor ORBextractor.cpp )
+TARGET_LINK_LIBRARIES( ORBextractor
+    ${OpenCV_LIBS} )
+
